@@ -3,6 +3,8 @@ from .models import Book
 
 
 class BookSerializer(serializers.ModelSerializer):
+    user = serializers.HiddenField(default=serializers.CurrentUserDefault)
+
     class Meta:
         model = Book
-        fields = ("title", "description", "category")
+        fields = "__all__"
