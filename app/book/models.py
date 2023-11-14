@@ -11,6 +11,7 @@ class Book(models.Model):
     is_active = models.BooleanField(default=True)
     category = models.ForeignKey("Category", on_delete=models.PROTECT, null=True)
 
+
     def __str__(self):
         return self.title
 
